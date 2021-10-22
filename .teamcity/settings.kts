@@ -8,7 +8,7 @@ fun ProjectFeatures.addGraphs(buildTypeList : List<BuildType>) {
         
  buildTypeList.forEach {
     val buildStepsN = ${it.steps}
-    buildStepsN..forEach {     
+    buildStepsN.forEach {     
     feature {
 
         type = "buildtype-graphs"
