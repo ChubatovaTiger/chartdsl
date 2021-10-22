@@ -29,51 +29,7 @@ project {
 
     buildType(Stat)
 
-    features {
-        feature {
-            id = "PROJECT_EXT_3"
-            type = "buildtype-graphs"
-            param("series", """
-                [
-                  {
-                    "type": "valueType",
-                    "title": "Build Step #1 - Command Line with id RUNNER_4",
-                    "key": "buildStageDuration:buildStepRUNNER_4"
-                  },
-                  {
-                    "type": "valueType",
-                    "key": "buildStageDuration:buildStepRUNNER_5"
-                  }
-                ]
-            """.trimIndent())
-            param("format", "text")
-            param("title", "nastya")
-            param("seriesTitle", "Serie")
-        }
-        feature {
-            id = "PROJECT_EXT_6"
-            type = "buildtype-graphs"
-            param("series", """
-                [
-                  {
-                    "type": "valueType",
-                    "title": "Build Step #1 - Command Line \"nastiastep1\"",
-                    "key": "buildStageDuration:buildStepRUNNER_1"
-                  },
-                  {
-                    "type": "valueType",
-                    "title": "Build Step #2 - Command Line \"nastiastep2\"",
-                    "key": "buildStageDuration:buildStepRUNNER_2"
-                  }
-                ]
-            """.trimIndent())
-            param("format", "text")
-            param("hideFilters", "")
-            param("title", "nastia")
-            param("defaultFilters", "")
-            param("seriesTitle", "Serie")
-        }
-    }
+    
 }
 
 object Stat : BuildType({
