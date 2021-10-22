@@ -80,6 +80,7 @@ fun ProjectFeatures.addGraphs(buildTypeList : List<BuildType>) {
                       {
                         "type": "valueTypes",
                         "key": "buildStageDuration:buildStepRUNNER_1",
+                        "sourceBuildTypeId": "Chartdsl_Secondaconfig",
                         "title": "my custom titel"
                       }
                     ]
