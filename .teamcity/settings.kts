@@ -98,7 +98,7 @@ version = "2021.1"
 project {
 
     buildType(Buildconfig)
-    sequential  {
+    val buildChain = sequential  {
       buildType(Buildconfig)
     }
     features {
