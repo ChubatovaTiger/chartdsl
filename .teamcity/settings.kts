@@ -71,7 +71,7 @@ fun ProjectFeatures.addGraphs(buildTypeList : List<BuildType>) {
             param("defaultFilters", "showFailed, averaged")
             param("seriesTitle", "Serie")
         }
-    }
+    
     feature {
         type = "buildtype-graphs"
         param(
@@ -91,6 +91,7 @@ fun ProjectFeatures.addGraphs(buildTypeList : List<BuildType>) {
         param("title", "Time per step")
         param("defaultFilters", "showFailed")
         param("seriesTitle", "Serie")
+    }
     }
 }
 
