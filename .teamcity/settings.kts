@@ -99,7 +99,7 @@ project {
 
     buildType(Buildconfig)
     features {
-    addGraphs(buildChain.buildTypes())
+    addGraphs(Buildconfig)
     }
 }
 
