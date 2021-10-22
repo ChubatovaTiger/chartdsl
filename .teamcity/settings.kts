@@ -98,8 +98,10 @@ version = "2021.1"
 project {
 
     buildType(Buildconfig)
+    buildType(Secondaconfig)
     val buildChain = sequential  {
       buildType(Buildconfig)
+      buildType(Secondaconfig)
     }
     features {
     addGraphs(buildChain.buildTypes())
@@ -115,3 +117,22 @@ object Buildconfig : BuildType({
         }
     }
 })
+
+object Secondaconfig : BuildType({
+    name = "Secondaconfig"
+
+ steps {
+        script {
+            name = "step1"
+            scriptContent = "echo a"
+        }
+        script {
+            name = "step2"
+            scriptContent = "echo a"
+        }
+    }
+})
+
+
+
+
