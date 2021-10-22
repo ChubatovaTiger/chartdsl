@@ -28,7 +28,6 @@ version = "2021.1"
 project {
 
     buildType(Stat)
-    buildType(StatNonames)
 
     features {
         feature {
@@ -91,22 +90,6 @@ object Stat : BuildType({
         }
         script {
             name = "nastiastep3"
-            scriptContent = "echo a"
-        }
-    }
-})
-
-object StatNonames : BuildType({
-    name = "stat nonames"
-
-    steps {
-        script {
-            scriptContent = "echo a"
-        }
-        script {
-            scriptContent = "echo a"
-        }
-        script {
             scriptContent = "echo a"
         }
     }
