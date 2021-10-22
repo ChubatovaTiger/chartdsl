@@ -5,7 +5,7 @@ import jetbrains.buildServer.configs.kotlin.v2019_2.buildSteps.script
 
 fun ProjectFeatures.addGraphs(buildTypeList : List<BuildType>) {
 
-    buildTypeList.forEach     
+    buildTypeList.forEach    { 
     feature {
         type = "buildtype-graphs"
         param(
