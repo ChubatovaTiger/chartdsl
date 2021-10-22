@@ -27,6 +27,14 @@ fun ProjectFeatures.addGraphs(buildTypeList : List<BuildType>) {
                 "key": "buildStageDuration:buildStepRUNNER_1"
 
                       }
+                      {
+
+                "type": "valueType",
+                "title": "Build Step d",
+                "sourceBuildTypeId": "${it.id}",
+                "key": "buildStageDuration:buildStepRUNNER_2"
+
+                      }
 
                     ]
 
