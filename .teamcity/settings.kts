@@ -75,6 +75,7 @@ object Stat : BuildType({
 
     steps {
         script {
+            name = "nastiastep1"
             scriptContent = "echo a"
         }
         script {
