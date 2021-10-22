@@ -1,34 +1,32 @@
 
+
 import jetbrains.buildServer.configs.kotlin.v2019_2.*
 import jetbrains.buildServer.configs.kotlin.v2019_2.buildSteps.script
 
 
 fun ProjectFeatures.addGraphs(buildTypeList : List<BuildType>) {
 
-    buildTypeList.forEach    { 
+    buildTypeList.forEach {
+
+        
+
     feature {
+
         type = "buildtype-graphs"
+
         param(
 
             "series", """
-            [
+
+                    [
 
                       {
 
                         "type": "valueTypes",
-                        "sourceBuildTypeId": ${it.id},
-                        "key": "buildStageDuration:buildStepRUNNER_1",
 
-                        "title": "custom title 1"
+                        "pattern": "buildStageDuration:*",
 
-                      }
-                      {
-
-                        "type": "valueTypes",
-                        "sourceBuildTypeId": ${it.id},
-                        "key": "buildStageDuration:buildStepRUNNER_2",
-
-                        "title": "custom title 2"
+                        "title": "Stage: {1}"
 
                       }
 
@@ -39,12 +37,15 @@ fun ProjectFeatures.addGraphs(buildTypeList : List<BuildType>) {
         )
 
         param("format", "duration")
+
         param("hideFilters", "")
+
         param("title", "Time per step")
+
         param("defaultFilters", "showFailed")
+
         param("seriesTitle", "Serie")
 
-    }
     }
 
 }
@@ -52,6 +53,7 @@ fun ProjectFeatures.addGraphs(buildTypeList : List<BuildType>) {
 
 
 version = "2021.1"
+
 
 
 project {
@@ -127,4 +129,6 @@ object Secondaconfig : BuildType({
     }
 
 })
+
+
 
