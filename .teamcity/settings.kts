@@ -79,8 +79,8 @@ fun ProjectFeatures.addGraphs(buildTypeList : List<BuildType>) {
                     [
                       {
                         "type": "valueTypes",
-                        "pattern": "buildStageDuration:*",
-                        "title": "Stage: {1}"
+                        "key": "buildStageDuration:buildStepRUNNER_4",
+                        "title": "my custom titel"
                       }
                     ]
             """.trimIndent()
