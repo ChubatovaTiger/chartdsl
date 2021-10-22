@@ -22,5 +22,11 @@ changeBuildType(RelativeId("Buildconfig")) {
                 scriptContent = "echo a"
             }
         }
+        insert(2) {
+            script {
+                name = "New build step (1)"
+                scriptContent = "echo a"
+            }
+        }
     }
 }
