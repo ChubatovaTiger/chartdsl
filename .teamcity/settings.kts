@@ -80,7 +80,7 @@ fun ProjectFeatures.addGraphs(buildTypeList : List<BuildType>) {
                       {
                         "type": "valueTypes",
                         "pattern": "buildStageDuration:*",
-                        "title": "Stage: "
+                        "title": "Stage: {1}"
                       }
                     ]
             """.trimIndent()
