@@ -53,6 +53,15 @@ project {
                 ]
             """.trimIndent())
         }
+        buildTypeCustomChart {
+            id = "PROJECT_EXT_6"
+            title = "nastia"
+            seriesTitle = "Serie"
+            format = CustomChart.Format.TEXT
+            series = listOf(
+                Serie(title = "Build Step #1 - Command Line "nastiastep1"", key = SeriesKey.buildStepDuration("RUNNER_1"))
+            )
+        }
     }
 }
 
