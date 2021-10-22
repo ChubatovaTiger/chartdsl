@@ -98,8 +98,11 @@ version = "2021.1"
 project {
 
     buildType(Buildconfig)
+    sequential  {
+      buildType(Buildconfig)
+    }
     features {
-    addGraphs(Buildconfig)
+    addGraphs(buildChain.buildTypes())
     }
 }
 
