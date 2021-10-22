@@ -1,5 +1,8 @@
 import jetbrains.buildServer.configs.kotlin.v2019_2.*
+import jetbrains.buildServer.configs.kotlin.v2019_2.CustomChart
+import jetbrains.buildServer.configs.kotlin.v2019_2.CustomChart.*
 import jetbrains.buildServer.configs.kotlin.v2019_2.buildSteps.script
+import jetbrains.buildServer.configs.kotlin.v2019_2.buildTypeCustomChart
 
 /*
 The settings script is an entry point for defining a TeamCity
@@ -23,7 +26,7 @@ To debug in IntelliJ Idea, open the 'Maven Projects' tool window (View
 'Debug' option is available in the context menu for the task.
 */
 
-version = "2021.1"
+version = "2021.2"
 
 project {
 
@@ -31,9 +34,11 @@ project {
     buildType(StatNonames)
 
     features {
-        feature {
+        buildTypeCustomChart {
             id = "PROJECT_EXT_3"
-            type = "buildtype-graphs"
+            title = "nastya"
+            seriesTitle = "Serie"
+            format = CustomChart.Format.TEXT
             param("series", """
                 [
                   {
@@ -47,25 +52,16 @@ project {
                   }
                 ]
             """.trimIndent())
-            param("format", "text")
-            param("title", "nastya")
-            param("seriesTitle", "Serie")
         }
-        feature {
+        buildTypeCustomChart {
             id = "PROJECT_EXT_6"
-            type = "buildtype-graphs"
-            param("series", """
-                [
-                  {
-                    "type": "valueType",
-                    "title": "Build Step #1 - Command Line \"nastiastep1\"",
-                    "key": "buildStageDuration:buildStepRUNNER_1"
-                  }
-                ]
-            """.trimIndent())
-            param("format", "text")
-            param("title", "nastia")
-            param("seriesTitle", "Serie")
+            title = "nastia"
+            seriesTitle = "Serie"
+            format = CustomChart.Format.TEXT
+            series = listOf(
+                Serie(title = "Build Step #1 - Command Line "nastiastep1"", key = SeriesKey.buildStepDuration("RUNNER_1")),
+                Serie(title = "Build Step #2 - Command Line "nastiastep2"", key = SeriesKey.buildStepDuration("RUNNER_2"))
+            )
         }
     }
 }
