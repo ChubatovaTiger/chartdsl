@@ -8,7 +8,7 @@ fun ProjectFeatures.addGraphs(buildTypeList : List<BuildType>) {
         
  buildTypeList.forEach {
 
-    ${it.steps}.forEach {     
+
     feature {
 
         type = "buildtype-graphs"
@@ -22,10 +22,11 @@ fun ProjectFeatures.addGraphs(buildTypeList : List<BuildType>) {
                       {
 
                         "type": "valueTypes",
-
+                        "title": "hi",
                         "sourceBuildTypeId": ${it.id},
 
-                        "title": "my custom title 2"
+                        
+                        "key": "BuildDuration"
 
                       }
 
@@ -46,7 +47,7 @@ fun ProjectFeatures.addGraphs(buildTypeList : List<BuildType>) {
         param("seriesTitle", "Serie")
 
     }
-    }
+
  }
 
 }
