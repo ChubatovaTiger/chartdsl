@@ -17,7 +17,7 @@ fun ProjectFeatures.addGraphs(buildTypeList : List<BuildType>) {
 
                         "type": "valueTypes",
                         "sourceBuildTypeId": ${it.id},
-                        "key": "buildStageDuration:buildStepRUNNER_4",
+                        "key": "buildStageDuration:buildStepRUNNER_1",
 
                         "title": "custom title 1"
 
@@ -26,7 +26,7 @@ fun ProjectFeatures.addGraphs(buildTypeList : List<BuildType>) {
 
                         "type": "valueTypes",
                         "sourceBuildTypeId": ${it.id},
-                        "key": "buildStageDuration:buildStepRUNNER_5",
+                        "key": "buildStageDuration:buildStepRUNNER_2",
 
                         "title": "custom title 2"
 
