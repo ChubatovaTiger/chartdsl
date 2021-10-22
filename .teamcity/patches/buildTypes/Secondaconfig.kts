@@ -20,7 +20,7 @@ create(DslContext.projectId, BuildType({
             scriptContent = "echo a"
         }
         script {
-            name = "step1 (1)"
+            name = "step2"
             scriptContent = "echo a"
         }
     }
