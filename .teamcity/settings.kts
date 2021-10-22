@@ -6,7 +6,9 @@ import jetbrains.buildServer.configs.kotlin.v2019_2.buildSteps.script
 
 fun ProjectFeatures.addGraphs(buildTypeList : List<BuildType>) {
         
-
+ buildTypeList.forEach {
+    val buildStepsN = ${it.steps}
+    buildStepsN..forEach {     
     feature {
 
         type = "buildtype-graphs"
@@ -21,9 +23,9 @@ fun ProjectFeatures.addGraphs(buildTypeList : List<BuildType>) {
 
                         "type": "valueTypes",
 
-                        "pattern": "buildStageDuration:*",
+                        "sourceBuildTypeId": ${it.id},
 
-                        "title": "Stage: {1}"
+                        "title": "my custom title 2"
 
                       }
 
@@ -44,6 +46,8 @@ fun ProjectFeatures.addGraphs(buildTypeList : List<BuildType>) {
         param("seriesTitle", "Serie")
 
     }
+    }
+ }
 
 }
 
