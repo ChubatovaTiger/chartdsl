@@ -14,6 +14,46 @@ accordingly, and delete the patch script.
 */
 changeProject(DslContext.projectId) {
     features {
+        val feature1 = find<CustomChart> {
+            buildTypeCustomChart {
+                id = "PROJECT_EXT_5"
+                title = "Time per step"
+                seriesTitle = "Serie"
+                format = CustomChart.Format.DURATION
+                defaultFilters = listOf(DefaultFilters.SHOW_FAILED)
+                param("series", """
+                    [
+                    
+                      {
+                    
+                        "type": "valueTypes",
+                    
+                        "pattern": "buildStageDuration:*"
+                    
+                         }
+                    
+                    ]
+                """.trimIndent())
+            }
+        }
+        feature1.apply {
+            title = "Time per step"
+            seriesTitle = "Serie"
+            format = CustomChart.Format.DURATION
+            defaultFilters = listOf(DefaultFilters.SHOW_FAILED)
+            param("properties.axis.y.includeZero", "true")
+            param("series", """
+                [
+                  {
+                    "type": "valueTypes",
+                    "pattern": "buildStageDuration:*"
+                  }
+                ]
+            """.trimIndent())
+            param("properties.axis.y.min", "")
+            param("properties.axis.y.type", "default")
+            param("properties.axis.y.max", "")
+        }
         add {
             buildTypeCustomChart {
                 id = "PROJECT_EXT_7"
