@@ -1,7 +1,7 @@
 
-import jetbrains.buildServer.configs.kotlin.v2021.2.*
+import jetbrains.buildServer.configs.kotlin.v2019.2.*
 
-import jetbrains.buildServer.configs.kotlin.v2021.2.buildSteps.script
+import jetbrains.buildServer.configs.kotlin.v2019.2.buildSteps.script
 
 
 
