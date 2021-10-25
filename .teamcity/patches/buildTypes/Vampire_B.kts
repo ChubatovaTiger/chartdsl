@@ -12,5 +12,9 @@ in the project with id = 'Vampire', and delete the patch script.
 create(RelativeId("Vampire"), BuildType({
     id("Vampire_B")
     name = "B"
+
+    vcs {
+        root(RelativeId("Vampire_HttpsGithubComChubatovaTigerChubatovaGradleTestsBackup"))
+    }
 }))
 
