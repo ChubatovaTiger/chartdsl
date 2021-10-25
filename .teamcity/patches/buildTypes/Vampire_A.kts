@@ -12,5 +12,13 @@ in the project with id = 'Vampire', and delete the patch script.
 create(RelativeId("Vampire"), BuildType({
     id("Vampire_A")
     name = "A"
+
+    enablePersonalBuilds = false
+    type = BuildTypeSettings.Type.COMPOSITE
+    maxRunningBuilds = 1
+
+    vcs {
+        showDependenciesChanges = true
+    }
 }))
 
