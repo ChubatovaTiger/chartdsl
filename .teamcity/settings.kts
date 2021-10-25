@@ -1,13 +1,109 @@
 
-
 import jetbrains.buildServer.configs.kotlin.v2019_2.*
+
 import jetbrains.buildServer.configs.kotlin.v2019_2.buildSteps.script
 
 
-fun ProjectFeatures.addGraphs(buildTypeList : List<BuildType>) {
-        
- buildTypeList.forEach {
 
+
+
+fun ProjectFeatures.addGraphs(buildTypeList : List<BuildType>) {
+
+    buildTypeList.forEach {
+
+        feature {
+
+            type = "project-graphs"
+
+            param(
+
+                "series", """
+
+                    [
+
+                      {
+
+                        "type": "valueType",
+
+                        "title": "Time spent in queue",
+
+                        "sourceBuildTypeId": ${it.id},
+
+                        "key": "TimeSpentInQueue"
+
+                      },
+
+                      {
+
+                        "type": "valueType",
+
+                        "title": "Build duration",
+
+                        "sourceBuildTypeId": ${it.id},
+
+                        "key": "BuildDuration"
+
+                      }
+
+                    ]
+
+                """.trimIndent()
+
+            )
+
+            param("format", "duration")
+
+            param("hideFilters", "")
+
+            param("title", "Time spent overall ${it.name}")
+
+            param("defaultFilters", "showFailed")
+
+            param("seriesTitle", "Serie")
+
+        }
+
+        feature {
+
+            type = "project-graphs"
+
+            param(
+
+                "series", """
+
+                    [
+
+                      {
+
+                        "type": "valueType",
+
+                        "title": "Success Rate for ${it.name}",
+
+                        "sourceBuildTypeId": ${it.id},
+
+                        "key": "SuccessRate"
+
+                      }
+
+                    ]
+
+                """.trimIndent()
+
+            )
+
+            param("format", "percentBy1")
+
+            param("hideFilters", "")
+
+            param("title", "Success Rate for ${it.name}")
+
+            param("defaultFilters", "showFailed, averaged")
+
+            param("seriesTitle", "Serie")
+
+        }
+
+    }
 
     feature {
 
@@ -21,18 +117,11 @@ fun ProjectFeatures.addGraphs(buildTypeList : List<BuildType>) {
 
                       {
 
-                "type": "valueType",
-                "title": "Build Step f",
-                "sourceBuildTypeId": "${it.id}",
-                "key": "buildStageDuration:${it.steps[0]}"
+                        "type": "valueTypes",
 
-                      },
-                      {
+                        "pattern": "buildStageDuration:*",
 
-                "type": "valueType",
-                "title": "Build Step d",
-                "sourceBuildTypeId": "${it.id}",
-                "key": "buildStageDuration:${it.steps[1]}"
+                        "title": "Stage: {1}"
 
                       }
 
@@ -53,8 +142,6 @@ fun ProjectFeatures.addGraphs(buildTypeList : List<BuildType>) {
         param("seriesTitle", "Serie")
 
     }
-
- }
 
 }
 
@@ -137,6 +224,4 @@ object Secondaconfig : BuildType({
     }
 
 })
-
-
 
