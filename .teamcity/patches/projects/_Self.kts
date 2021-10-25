@@ -21,7 +21,8 @@ changeProject(DslContext.projectId) {
                 seriesTitle = "Serie"
                 format = CustomChart.Format.TEXT
                 series = listOf(
-                    Serie(title = "chubatova build step 1", key = SeriesKey.buildStepDuration("RUNNER_1"))
+                    Serie(title = "chubatova build step 1", key = SeriesKey.buildStepDuration("RUNNER_1")),
+                    Serie(title = "chubatova build step2", key = SeriesKey.buildStepDuration("RUNNER_2"))
                 )
             }
         }
