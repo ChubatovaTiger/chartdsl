@@ -15,6 +15,7 @@ create(RelativeId("Vampire"), BuildType({
 
     vcs {
         root(RelativeId("Vampire_HttpsGithubComChubatovaTigerChubatovaGradleTestsBackup"))
+        root(DslContext.settingsRoot)
     }
 }))
 
