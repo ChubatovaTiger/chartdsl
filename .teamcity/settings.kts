@@ -77,7 +77,7 @@ fun ProjectFeatures.addGraphs(buildTypeList : List<BuildType>) {
 
                         "type": "valueType",
 
-                        "title": "Success Rates for ${it.name}",
+                        "title": "Success Rate for ${it.name}",
 
                         "sourceBuildTypeId": ${it.id},
 
