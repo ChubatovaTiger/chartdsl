@@ -22,5 +22,14 @@ create(RelativeId("Vampire"), BuildType({
 
         showDependenciesChanges = true
     }
+
+    dependencies {
+        snapshot(RelativeId("Vampire_B")) {
+            reuseBuilds = ReuseBuilds.NO
+        }
+        snapshot(RelativeId("Vampire_C")) {
+            reuseBuilds = ReuseBuilds.NO
+        }
+    }
 }))
 
