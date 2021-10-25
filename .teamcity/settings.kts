@@ -121,7 +121,7 @@ fun ProjectFeatures.addGraphs(buildTypeList : List<BuildType>) {
 
                         "pattern": "buildStageDuration:*",
 
-                        "title": "Stage: {0}"
+                        "title": "{0}"
 
                       }
 
