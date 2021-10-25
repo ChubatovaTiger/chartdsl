@@ -18,6 +18,8 @@ create(RelativeId("Vampire"), BuildType({
     maxRunningBuilds = 1
 
     vcs {
+        root(RelativeId("Vampire_HttpsGithubComChubatovaTigerChubatovaGradleTestsBackup"))
+
         showDependenciesChanges = true
     }
 }))
