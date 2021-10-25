@@ -26,5 +26,11 @@ changeBuildType(RelativeId("Secondaconfig")) {
                 scriptContent = "echo a"
             }
         }
+        insert(3) {
+            script {
+                name = "my build steps _ with spaces !~@#${'$'}%&(*&_"
+                scriptContent = "echo a"
+            }
+        }
     }
 }
